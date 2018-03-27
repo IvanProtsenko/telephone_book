@@ -5,16 +5,31 @@
 
 <div style = "margin: 20px"><h2>Личные данные:</h2></div><br>
 <div class="jumbotron pd-3 pd-md-5 text-white rounded bg-dark">
-<h2>Имя: {{ $contact->name }}<br>
-    <small>Место работы: {{$contact->job}}</small>
+<h2>{{ $contact->name }}<br>
+  <small>{{$contact->job}}</small>
 </h2>
-<p>Комментарии: {{$contact->comment}}</p>
-<p>Как связаться: {{$contact->email}}</p>
-</div>
+<p>{{$contact->comment}}</p>
+<p>{{$contact->email}}</p>
 
-<left>
-<a href="{{url('/contact/'.$contact->id.'/edit')}}" style = "margin: 30px">Изменить</a><br><br>
-<a href="{{url('/')}}" style = "margin: 30px">Назад</a>
+<h3>Телефоны</h3>
+<ul>
+@foreach($contact->phones as $phone)
+  <li>{{ $phone->phone }}</li>
+@endforeach
+<li><a href="{{url('/contact/'.$contact->id.'/add_phone')}}">добавить</a></li>
+</ul>
+
+<h3>Сайты</h3>
+<ul>
+@foreach($contact->sites as $site)
+  <li>{{ $site->site }}</li>
+@endforeach
+<li><a href="{{url('/contact/'.$contact->id.'/add_site')}}">добавить</a></li>
+</ul>
+
+<a href="{{url('/contact/'.$contact->id.'/edit')}}">Изменить</a><br>
+<a href="{{url('/contact/'.$contact->id.'/delete')}}">Удалить</a><br>
+<a href="{{url('/')}}">Назад</a>
 </left>
 
 <style>
