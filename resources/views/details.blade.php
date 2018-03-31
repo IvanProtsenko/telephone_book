@@ -3,8 +3,8 @@
 @section('content')
 
 
-<div style = "margin: 20px"><h2>Личные данные:</h2></div><br>
-<div class="jumbotron pd-3 pd-md-5 text-white rounded bg-dark">
+<div style = "margin-left: 150px; margin-top: 10px"><h2>Личные данные:</h2></div>
+<div class="card-body pd-3 pd-md-5 text-white rounded bg-dark">
 <h2>{{ $contact->name }}<br>
   <small>{{$contact->job}}</small>
 </h2>
@@ -35,7 +35,7 @@
 </left>
 
 <style>
-.jumbotron {
+.card-body {
   text-align: left;
   position: auto;
   margin-left: 20px;
