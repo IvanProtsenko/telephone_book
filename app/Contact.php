@@ -13,6 +13,6 @@ class Contact extends Model
     }
     public function sites()
     {
-        return $this->hasMany('App\Site', 'contact_id', 'id');
+        return $this->hasMany('App\Site', 'contact_id','id');
     }
 }

@@ -39,4 +39,10 @@ class SitesController extends Controller
 
         return redirect('/contact/' . $site->contact->id);
     }
+
+    public function delete_cont($contact_id)
+    {
+      Site::where('contact_id', $contact_id)->delete();
+      return redirect('/contact/' . $site->contact->id);
+    }
 }

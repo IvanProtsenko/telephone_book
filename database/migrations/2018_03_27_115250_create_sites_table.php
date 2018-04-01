@@ -19,7 +19,7 @@ class CreateSitesTable extends Migration
 
             // связь с контактом
             $table->unsignedInteger('contact_id');
-            $table->foreign('contact_id')->references('id')->on('contacts');
+            $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade');
 
             $table->timestamps();
         });

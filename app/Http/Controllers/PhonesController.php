@@ -39,4 +39,10 @@ class PhonesController extends Controller
 
         return redirect('/contact/' . $phone->contact->id);
     }
+    
+    public function delete_cont($contact_id)
+    {
+      Phone::where('contact_id', $contact_id)->delete();
+      return redirect('/contact/' . $phone->contact->id);
+    }
 }

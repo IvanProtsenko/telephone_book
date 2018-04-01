@@ -24,7 +24,7 @@
       justify-content: space-around;
       color: white;
       padding-top: 35px;
-      padding-left: 15px;
+      padding-left: 40px;
       padding-bottom: 35px;
     }
   </style>
